@@ -24,7 +24,7 @@ th {
 }
 
 form {
-    background-color: lightgrey;
+    background-color: lightblue;
     font-family: monospace;
     font-size: 16px;
 }
@@ -32,4 +32,10 @@ form {
 h4 {
     background-color: lightblue;
     font-family: monospace;
+}
+
+.container
+{
+    background-image: url(../images/trainstation.jpg);
+    background-size: cover;
 }
