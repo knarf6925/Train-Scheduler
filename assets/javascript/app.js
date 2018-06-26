@@ -14,6 +14,7 @@ setInterval(function () {
 
 moment().format('MMMM Do YYYY, h:mm:ss a');
 
+
 var database = firebase.database();
 
 var TrainName;
@@ -65,7 +66,7 @@ $("button").on("click", function () {
         function addToTable() {
 
             var tbody = $("tbody");
-            tbody.append("<tr><td>" + TrainName + "</td><td>" + Destination + "</td><td>" +
+            tbody.prepend("<tr><td>" + TrainName + "</td><td>" + Destination + "</td><td>" +
                 FirstTrainTime + "</td><td>" + Frequency + "</td><td>" + MinutesAway + "</td><td>");
         }
 
