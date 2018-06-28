@@ -27,7 +27,7 @@ $("#addTrainBtn").on("click", function () {
    }
    trainDate.ref().push(newTrain);
 
-   alert("Train Added!");
+    alert("Train Added!");
 
    $("#trainNameInput").val("");
    $("#destinationInput").val("");
@@ -46,7 +46,7 @@ trainData.ref().on("child_added",function(snapshot) {
 
     var remainder = moment().diff(moment.unix(firstTrain),"minutes")%frequency;
     var minutes = frequency - remainder;
-    var arrival = moment.add(minutes,"m").format("hh:mm A");
+    var arrival = moment().add(minutes,"m").format("hh:mm A");
 
     console.log(remainder);
     console.log(minutes);
@@ -56,7 +56,7 @@ $("#trainTable > tbody").append("<tr><td>"+name+"<tr><td>"+destination+"<tr><td>
 minutes+"<tr><td>");
 
 
-})
+});
 
 
 
