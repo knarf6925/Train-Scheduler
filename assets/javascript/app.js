@@ -15,9 +15,11 @@ var trainData = firebase.database();
 $("#addTrainBtn").on("click", function () {
   
     var trainName = $("#trainNameInput").val().trim();
-    var destination = $("#destination").val().trim();
+    var destination = $("#destinationInput").val().trim();
     var firstTrain = moment($("#firstTrainInput").val().trim(),"HH:mm").subtract(10,"years").format("x");
     var frequency = $("#frequencyInput").val().trim();
+
+
 
    var newTrain = {
        name: trainName,
@@ -25,7 +27,7 @@ $("#addTrainBtn").on("click", function () {
        firstTrain: firstTrain,
        frequency: frequency
    }
-   trainDate.ref().push(newTrain);
+   trainData.ref().push(newTrain);
 
     alert("Train Added!");
 
@@ -52,8 +54,8 @@ trainData.ref().on("child_added",function(snapshot) {
     console.log(minutes);
     console.log(arrival);
 
-$("#trainTable > tbody").append("<tr><td>"+name+"<tr><td>"+destination+"<tr><td>"+frequency+"<tr><td>"+arrival+"<tr><td>"+
-minutes+"<tr><td>");
+$("#trainTable > tbody").prepend("<tr><td>"+name+"<td><td>"+destination+"<td><td>"+frequency+"<td><td>"+arrival+"<td><td>"+
+minutes+"<td><tr>");
 
 
 });
